@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContext\LivrariaDbContext.cs" />
     <Compile Include="Model\Autor.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Livro.cs" />
