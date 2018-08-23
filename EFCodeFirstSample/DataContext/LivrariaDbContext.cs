@@ -8,6 +8,8 @@ namespace EFCodeFirstSample.DataContext
     {
         public LivrariaDbContext() : base("LivrariaDbContext")
         {
+            Configuration.LazyLoadingEnabled = true;
+            Configuration.ProxyCreationEnabled = true;
             Database.SetInitializer(new LivrariaDbContextInitilizer());
         }
 
@@ -18,6 +20,9 @@ namespace EFCodeFirstSample.DataContext
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Autor>().ToTable("autor");
+            modelBuilder.Entity<Livro>().ToTable("livros");
+            modelBuilder.Entity<Categoria>().ToTable("Categorias");
             base.OnModelCreating(modelBuilder);
         }
 
