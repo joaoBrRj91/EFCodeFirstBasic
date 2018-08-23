@@ -133,6 +133,9 @@ namespace EFCodeFirstSample
             using (LivrariaDbContext db = new LivrariaDbContext())
             {
                 Console.WriteLine("Tudo");
+
+                /*Em alguns casos é interessante trazer todo a listagem,pois com
+                 lazy loading cada carregamento de um objeto é uma query no banco*/
                 foreach (Categoria categoria in
                     db.Categorias.Include("Livros")
                                  .Include("Livros.Categoria")
